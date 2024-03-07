@@ -1,6 +1,6 @@
 import {Headerstyle} from "./style"
 import React from "react"
-import {Text, View, Image} from "react-native"
+import {View, Image} from "react-native"
 
 export function Header(){
     return(
