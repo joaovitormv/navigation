@@ -2,35 +2,40 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {Header} from "./src/components/Header"
 import { Footer } from "./src/components/Footer"
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { Tela1 } from "./src/screens/tela1"
+import { Dispatch, SetStateAction, useState } from 'react';
 
-
-import { Tela2 } from './src/screens/tela2'; 
-
-const Stack = createStackNavigator();
-
-const A = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Tela2" component={Tela2} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+export interface a {
+  setPage : Dispatch<SetStateAction<number>>
+}
 
 export default function App() {
+  const[Page, setPage] = useState(1)
   
-
-  return (
-    
-    <View style={styles.container}>
-      <Header></Header>
-      <StatusBar style="auto" />
-      <Footer></Footer>
-    </View>
+  if (Page == 1){
+    return (
+      <View style={styles.container}>
+        <Header></Header>
+        <Tela1></Tela1>
+        <Footer setPage={setPage}></Footer> 
+      </View>
   );
+  }else if(Page == 2){
+    return (
+      <View style={styles.container}>  
+      <Header></Header>   
+      <Footer setPage={setPage}></Footer> 
+      </View>
+  );
+  }else{
+    return (
+      <View style={styles.container}>
+        <Header></Header>
+        <Footer setPage={setPage}></Footer> 
+      </View>
+  );
+  }
+  
 }
 
 const styles = StyleSheet.create({
@@ -40,3 +45,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+
