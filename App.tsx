@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import {Header} from "./src/components/Header"
 import { Footer } from "./src/components/Footer"
 import { Tela1 } from "./src/screens/tela1"
+import { Tela2 } from './src/screens/tela2';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 export interface a {
@@ -23,14 +24,16 @@ export default function App() {
   }else if(Page == 2){
     return (
       <View style={styles.container}>  
-      <Header></Header>   
-      <Footer setPage={setPage}></Footer> 
+        <Header></Header>   
+        <Tela2></Tela2>
+        <Footer setPage={setPage}></Footer> 
       </View>
   );
   }else{
     return (
       <View style={styles.container}>
         <Header></Header>
+        <Text>em breve</Text>
         <Footer setPage={setPage}></Footer> 
       </View>
   );
