@@ -1,6 +1,11 @@
 import { StyleSheet } from "react-native"
 
 export const Pg1style = StyleSheet.create({
+    view:{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
     img:{
         width: 320,
         height: 200,
@@ -16,6 +21,13 @@ export const Pg1style = StyleSheet.create({
         height: 200,
         marginLeft: 30,
         borderRadius: 30,
+    },
+    botao:{
+        backgroundColor: "#555555",
+        alignItems: "center",
+        height: 50,
+        justifyContent: "center",
     }
+    
 
 })
